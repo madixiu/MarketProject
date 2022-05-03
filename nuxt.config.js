@@ -18,10 +18,21 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    './assets/scss/styles/animate.min.css',
+    './assets/scss/styles/fontawesome.min.css',
+    './assets/scss/styles/style.scss',
+    './assets/scss/styles/admin.scss',
+    './assets/scss/styles/responsive.scss',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vue-carousel', ssr: false },
+    { src: '~/plugins/vue-backtotop', ssr: false },
+    { src: '~/plugins/vue-toastification', ssr: false },
+    { src: '~/plugins/vueperslides', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,7 +48,12 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
-
+  /*
+  ** Globally configure <nuxt-link> default active class.
+  */
+  router: {
+    linkActiveClass: 'active'
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
